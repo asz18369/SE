@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>Customers</h1>
+    <table>
+        <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Family Members</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer[0] }}</td>
+            <td>{{ customer[1] }}</td>
+            <td>{{ customer[2] }}</td>
+            <td>{{ customer[3] }}</td>
+            <td>{{ customer[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    
+
+    <h1>Salespersons</h1>
+    <table>
+        <tr>
+            <th>Salesperson ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+        {% for salesperson in salespersons %}
+        <tr>
+            <td>{{ salesperson[0] }}</td>
+            <td>{{ salesperson[1] }}</td>
+            <td>{{ salesperson[2] }}</td>
+            <td>{{ salesperson[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <h1>Massage Chairs</h1>
+    <table>
+        <tr>
+            <th>Chair ID</th>
+            <th>Style</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        {% for chair in chairs %}
+        <tr>
+            <td>{{ chair[0] }}</td>
+            <td>{{ chair[1] }}</td>
+            <td>{{ chair[2] }}</td>
+            <td>{{ chair[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    
+
+    <h1>Operations</h1>
+    <table>
+        <tr>
+            <th>Operation ID</th>
+            <th>Style</th>
+            <th>Quantity</th>
+            <th>Status</th>
+        </tr>
+        {% for operation in operations %}
+        <tr>
+            <td>{{ operation[0] }}</td>
+            <td>{{ operation[1] }}</td>
+            <td>{{ operation[2] }}</td>
+            <td>{{ operation[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    
+    
+</body>
+
+</html>

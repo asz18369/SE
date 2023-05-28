@@ -1,0 +1,33 @@
+<h1>Add Salesperson</h1>
+<form action="/add_salesperson" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required><br>
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" required><br>
+
+    <input type="submit" value="Add Salesperson">
+</form>
+
+<script>
+    document.getElementById("salespersonForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var form = event.target;
+        var formData = new FormData(form);
+
+        // 使用Ajax提交表單數據
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/add_salesperson");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // 表單提交成功，彈出視窗顯示成功訊息
+                alert("Salesperson added successfully!");
+                form.reset();
+            }
+        };
+        xhr.send(formData);
+    });
+</script>
